@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Employee listing{% endblock %}
+{% block content %}
+        <h2>Employee listing</h2>
+        <table border="1">
+            <thead>
+                <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Website</th></tr>
+            </thead>
+            <tbody>
+                {% for employee in employee_list %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{employee.first_name}}</td>
+                    <td>{{employee.last_name}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.website}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
